@@ -41,18 +41,6 @@ I made the following modifications:
 The original commit to this repo is the unmodified TI version.  If you want
 to see the changes I made, you can diff against the first commit.
 
-### Port Numbers ###
-
-The eflash utility uses ports for BOOTP, TFTP, and magic packet to
-start a firmware update.  These port numbers are all privileged ports
-and can give permission problems when running from a normal user account.
-Instead of changing privileges of the user account, I changed all the
-port numbers to be non-priveliged ports.  I did this by adding 40000 to
-all port numbers.
-
-NOTE: a matching change must be made in the ethernet boot loader
-**boot_eth**.
-
 ### Host IP address ###
 
 I had problems with the original code correctly picking up the host
